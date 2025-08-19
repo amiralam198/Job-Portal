@@ -156,6 +156,7 @@ export default function JobListing() {
               <img
                 onClick={() => setCurrentPage(Math.max(currentPage - 1, 1))}
                 src={assets.left_arrow_icon}
+                alt="previous"
               ></img>
             </a>
             {Array.from({ length: Math.ceil(filteredJobs.length / 6) }).map(
