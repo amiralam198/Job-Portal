@@ -1,6 +1,7 @@
 import moment from 'moment'
 import React, { useState } from 'react'
 import { assets, jobsApplied } from '../assets/assets'
+import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 
 export default function Application() {
@@ -63,6 +64,7 @@ export default function Application() {
         </tbody>
       </table>
     </div>
+    <Footer/>
     </>
   )
 }
