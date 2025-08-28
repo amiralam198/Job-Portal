@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import ManageJobs from "./pages/ManageJobs";
 import Profile from "./pages/Profile";
 import ViewApplication from "./pages/ViewApplication";
+import 'quill/dist/quill.snow.css'
 
 export default function App() {
   const { showRecruiterLogin } = useContext(AppContext);
