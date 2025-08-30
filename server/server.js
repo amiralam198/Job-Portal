@@ -4,6 +4,7 @@ import cors from 'cors'
 import 'dotenv/config'
 import connectDB from './config/db.js'
 import * as Sentry from "@sentry/node";
+import { clerkWebhooks } from './controllers/webhooks.js'
 
 // Initialize Express
 const app = express()
@@ -21,10 +22,14 @@ app.get("/debug-sentry", function mainHandler(req,res){
     throw new Error("My first Sentary error!")
 });
 
+app.post('/webhooks',clerkWebhooks)
+
+
 // Port
 const PORT = process.env.PORT || 5001
 Sentry.setupExpressErrorHandler(app);
 
 app.listen(PORT,()=>{
     console.log(`Server is running on port ${PORT}`);
-})
+});
+
