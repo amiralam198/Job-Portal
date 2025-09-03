@@ -1,4 +1,5 @@
 import express from 'express'
+import upload from '../config/multer.js';
 import {
     changeJobApplicationsStatus,
     changeVisibility,
@@ -14,7 +15,7 @@ import {
 const router = express.Router()
 
 // Register a comapny 
-router.post('/register',registerCompany)
+router.post('/register',upload.single('image'), registerCompany)
 
 // company login
 router.post('/login',loginCompany)
